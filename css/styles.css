@@ -93,13 +93,10 @@ button {
     align-items: center;
     gap:40px;
 }
-.address-main-list {
-    display: flex;
-}
 .nav-list-item {
     display: flex;
-    padding-top: 24px ;
-    padding-bottom: 24px ;
+    padding-top: 24px;
+    padding-bottom: 24px;
     color: #2E2F42;
     font-family: Roboto;
     font-size: 16px;
@@ -111,23 +108,31 @@ button {
     position: relative;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
+.nav-list .accent-navigation {
+    color:#404BBF;
+}
+.nav-list .accent-navigation::after {
+    background-color: #404bbf;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -1px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        position: absolute;
+        display: inline-block;
+        content: "";
+        width: 48px;
+        height: 4px;
+        border-radius: 2px;
+}
+.address-main-list {
+    display: flex;
+}
+
 .nav-list-item:hover {
     color: #404BBF;
 
 }
-.nav-list-item::after {
-    background-color: #404bbf;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -1px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    position: absolute;
-    display: inline-block;
-    content: "";
-    width: 48px;
-    height: 4px;
-    border-radius: 2px;
-}
+
 .address-list-item {
     line-height: 0;
 }
@@ -221,7 +226,6 @@ button {
 
 .team-element-list {
     display: flex;
-
     gap: 24px;
     justify-content: center;
 }
@@ -809,13 +813,17 @@ button {
 
 
 
+.container {
+    max-width: 320px;
+
+
+}
 
 @media screen and (max-width: 767.5px) {
     .container {
-            max-width: 318px;
-            
-    
-        }
+        padding-right: 16px;
+        padding-left: 16px;
+    }
     /* MOBILE HEADER STYLES */
     .nav-list {
             display: none;
@@ -838,7 +846,7 @@ button {
     
         
     
-        .header-container {
+        .page-header {
             padding-top: 16px;
             padding-bottom: 16px;
             
@@ -852,6 +860,8 @@ button {
                     position: relative;
                     display: flex;
                     flex-direction: column;
+                    justify-content: space-between;
+                    height: 100%;
                 }
         
                 .mobile-menu-flex-box {
@@ -859,7 +869,7 @@ button {
                 }
         
                 .mobile-address-socials-flex-box {
-                    padding-top: 168px;
+                    
                     padding-bottom: 40px;
         
                 }
@@ -982,20 +992,27 @@ button {
                     gap: 40px;
         
                 }
+                .accent-color2 {
+                    color: #404BBF;
+                }
+                .accent-color3 {
+                    color:#4D5AE5;
+                }
        /* MOBILE MENU STYLES END*/
 
                 /* MOBILE TITLE SECTION STYLES */
 
                 .title-section{
-                    margin-bottom: 48px;
+                    padding-top: 72px;
+                    padding-bottom: 72px;
                     background-position: center top;
                     background-repeat: no-repeat;
                     background-size: cover;
-                    min-height: 432px;
+                    
                     background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.7)), url('../images/bannerphone.jpg');
                 }
                 .title-section-container {
-                    min-height: 432px;
+                    
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -1020,7 +1037,7 @@ button {
 
                 /* MOBILE ADVANTAGES SECTION STYLES */
                 .advantages-section{
-                    padding-top: 48px;
+                    padding-top: 96px;
                     padding-bottom: 96px;
                 }
                 .icon-box {
@@ -1047,9 +1064,11 @@ button {
                     display: flex;
                     flex-direction: column;
                     gap:72px;
+                    width: fit-content;
                 }
-                
-
+                .team-info-container {
+                    max-width: 296px;
+                }
 
                 /* MOBILE TEAM SECTION STYLES END*/
 
@@ -1061,14 +1080,8 @@ button {
                 padding-bottom: 96px;
                 }
                 
-                .portfolio-block {
-                    width: 288px;
-                    height:400px;
-                }
-                .positioning-box {
-                    width: 288px;
-                    height:280px;
-                }
+                
+                
                 .list-portfolio {
                     display: flex;
                     flex-direction: column;
@@ -1134,7 +1147,10 @@ button {
 @media screen and (min-resolution: 192dpi) and (max-width: 767.5px),
 screen and (min-resolution: 2dppx) and (max-width: 767.5px),
 screen and (min-device-pixel-ratio: 2) and (max-width: 767.5px) {
-    .title-section-container {
+    .title-section {
+        background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
         background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.7)), url('../images/bannerphone@2x.jpg');
     }
 }
@@ -1143,7 +1159,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767.5px) {
 
 
 
-@media screen and (max-width: 1158px) {
+@media screen and (min-width: 768px) {
 
     .container {
         max-width: 768px;
@@ -1187,16 +1203,16 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767.5px) {
 
 }
 .title-section {
-    margin-bottom: 48px;
+    
         background-position: center top;
         background-repeat: no-repeat;
         background-size: cover;
-        min-height: 436px;
+        padding-top: 112px;
+            padding-bottom: 112px;
         background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.7)), url('../images/bannertablet.jpg');
 }
 .title-section-container {
-
-    min-height: 436px;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1211,7 +1227,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767.5px) {
         display: none;
 }
 .advantages-section {
-    padding-top: 48px;
+    padding-top: 96px;
     padding-bottom: 96px;
 }
     .advantages-list {
@@ -1224,7 +1240,6 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767.5px) {
     }
     .advantages-feature {
         width:356px;
-        height: 120px;
         
     }
     
@@ -1264,7 +1279,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767.5px) {
 /* TABLET FOOTER STYLES */
 .footer {
     padding-top: 96px;
-    min-height: 456px;
+    
     padding-bottom: 96px;
     
 
@@ -1274,7 +1289,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767.5px) {
     flex-wrap: wrap;
     column-gap: 24px;
     align-items: center;
-    justify-content:center;
+    width:584px;
     row-gap:72px;
 }
 .footer-form {
@@ -1287,10 +1302,13 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 767.5px) {
 
 
 
-@media screen and (min-resolution: 192dpi) and (max-width: 1158px),
-screen and (min-resolution: 2dppx) and (max-width: 1158px),
-screen and (min-device-pixel-ratio: 2) and (max-width: 1158px) {
-    .title-section-container {
+@media screen and (min-resolution: 192dpi) and (min-width: 768px),
+screen and (min-resolution: 2dppx) and (min-width: 768px),
+screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
+    .title-section {
+                background-position: center top;
+                    background-repeat: no-repeat;
+                    background-size: cover;
         background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.7)), url('../images/bannertablet@2x.jpg');
     }
 }
@@ -1299,7 +1317,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 1158px) {
 @media screen and (min-width: 1158px) {
 
     .container {
-        max-width: 1158px;
+        min-width: 1158px;
     }
 
     /* DESKTOP HEADER STYLES */
@@ -1325,22 +1343,23 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 1158px) {
     }
     .address-main-list {
         gap:40px;
+        flex-direction: row;
     }
 
     /* DESKTOP HEADER STYLES END*/
 
     /* DESKTOP TITLE SECTION STYLES */
     .title-section {
-        margin-bottom: 60px;
         background-position: center top;
         background-repeat: no-repeat;
         background-size: cover;
-        min-height: 600px;
+        padding-top: 188px;
+        padding-bottom: 188px;
         background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.7)), url('../images/bannerdesktop.jpg');
     }
 
     .title-section-container {
-        min-height: 600px;
+        
         display: flex;
         gap:48px;
         flex-direction: column;
@@ -1363,7 +1382,7 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 1158px) {
 
     /* DESKTOP ADVANTAGES SECTION STYLES */
     .advantages-section {
-        padding-top: 60px;
+        padding-top: 120px;
         padding-bottom:120px;
 
     }
@@ -1444,7 +1463,11 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 1158px) {
         .footer-container {
             display: flex;
             flex-direction: row ;
-            justify-content: baseline;
+           flex-wrap: nowrap;
+           margin-right: 0;
+           margin-left: 0;
+           gap:0px;
+           
 
         }
         .footer-form-container {
@@ -1470,9 +1493,13 @@ screen and (min-device-pixel-ratio: 2) and (max-width: 1158px) {
 @media screen and (min-resolution: 192dpi) and (min-width: 1158px),
 screen and (min-resolution: 2dppx) and (min-width: 1158px),
 screen and (min-device-pixel-ratio: 2) and (min-width: 1158px) {
-    .title-section-container {
+    .title-section {
+        background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
         background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.7)), url('../images/bannerdesktop@2x.jpg');
     }
+                        
 }
 
 
